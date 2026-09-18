@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Download authenticated source artifact through one-time bridge
         run: |
-          curl --fail --location --retry 3 --silent --show-error 'https://sdmntprwestus.oaiusercontent.com/files/00000000-e0c8-8230-995a-4ad2936b3ecb/raw?se=2026-09-18T08%3A53%3A50Z&sp=r&sv=2026-02-06&sr=b&scid=01a0b39f-478c-77a8-8531-8a76deef1c1c&skoid=5e713cdb-766b-475e-a3ca-8adb6cf99aa0&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T06%3A20%3A46Z&ske=2026-09-19T06%3A20%3A46Z&sks=b&skv=2026-02-06&sig=TpyTMN/p5hh9P9Q%2BkQMSJpPZbBvSt5aKkMsEv9t4ncA%3D' --output soudache-qc-viewer-pages.zip
+          curl --fail --location --retry 3 --silent --show-error 'https://sdmntprwestus3.oaiusercontent.com/files/00000000-2c20-81fd-9491-3d47ab65cd11/raw?se=2026-09-18T08%3A56%3A22Z&sp=r&sv=2026-02-06&sr=b&scid=01a0b39f-478c-77a8-8531-8a76deef1c1c&skoid=5e713cdb-766b-475e-a3ca-8adb6cf99aa0&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-17T18%3A09%3A02Z&ske=2026-09-18T18%3A09%3A02Z&sks=b&skv=2026-02-06&sig=WBLDtHhiwHI0NBY7hNJf9tVaPySVjBJDdr6xVGS3t18%3D' --output soudache-qc-viewer-pages.zip
       - name: Verify bundle identity and contents
         shell: bash
         run: |
@@ -28,6 +28,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release create asset-bundle-v1 soudache-qc-viewer-pages.zip \
+            --repo Zuozzzzzzzz/soudache-qc-viewer \
             --title "Soudache QC asset bundle v1" \
             --notes "Integrity-verified public QC delivery bundle. Production source of truth: private soudache-content commit 176588265b8a170d54910e9686d35a65bef3c10a. Credits: 0." \
             --latest=false
