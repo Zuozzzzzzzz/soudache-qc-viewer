@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#181b1d">
+    <title>Soudache 3D QC Viewer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js"></script>
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div><p class="eyebrow">Read-only QC Tool</p><h1>Soudache 3D QC Viewer</h1></div>
+      <label class="asset-picker"><span>Asset</span><select id="asset-select" aria-label="Select asset"></select></label>
+    </header>
+    <main>
+      <section class="viewer-shell" aria-label="Interactive 3D asset viewer">
+        <model-viewer id="qc-viewer" alt="Selected Soudache production asset" camera-controls
+          camera-orbit="45deg 75deg auto" camera-target="auto auto auto" field-of-view="30deg"
+          min-field-of-view="12deg" max-field-of-view="60deg" environment-image="neutral"
+          tone-mapping="neutral" exposure="1" shadow-intensity="0" interaction-prompt="none"
+          loading="eager" reveal="auto">
+          <div slot="poster" class="poster">Select an asset to begin.</div>
+          <div slot="progress-bar" class="progress-track"><div class="progress-bar"></div></div>
+        </model-viewer>
+        <div class="status-row"><span id="load-status" class="status" data-state="idle">Idle</span><span id="asset-size" class="muted"></span></div>
+        <div class="controls" aria-label="Camera controls">
+          <button id="reset-camera" type="button">Reset Camera</button>
+          <button id="auto-frame" type="button">Auto Frame</button>
+          <button id="zoom-in" type="button" aria-label="Zoom in">Zoom +</button>
+          <button id="zoom-out" type="button" aria-label="Zoom out">Zoom −</button>
+          <button class="view-preset" data-orbit="0deg 75deg auto" type="button">Front</button>
+          <button class="view-preset" data-orbit="90deg 75deg auto" type="button">Side</button>
+          <button class="view-preset" data-orbit="180deg 75deg auto" type="button">Back</button>
+        </div>
+        <p class="interaction-help">Drag: orbit · Wheel/pinch: zoom · Shift-drag or two-finger drag: pan</p>
+      </section>
+      <aside class="info-panel" aria-label="Asset information">
+        <div class="panel-heading"><div><p class="eyebrow">Registry Record</p><h2 id="asset-id">—</h2></div><span id="route-badge" class="badge">—</span></div>
+        <dl>
+          <div><dt>Material Family</dt><dd id="material-family">—</dd></div>
+          <div><dt>Current Stage</dt><dd id="current-stage">—</dd></div>
+          <div><dt>Status</dt><dd id="current-status">—</dd></div>
+          <div><dt>Source Commit</dt><dd><code id="source-commit">—</code></dd></div>
+          <div><dt>Production GLB</dt><dd><code id="glb-path">—</code></dd></div>
+          <div><dt>Source</dt><dd><a id="source-link" target="_blank" rel="noreferrer">—</a></dd></div>
+          <div><dt>Author</dt><dd id="author">—</dd></div>
+          <div><dt>License</dt><dd><a id="license-link" target="_blank" rel="noreferrer">—</a></dd></div>
+          <div><dt>GLB Structure</dt><dd id="glb-structure">—</dd></div>
+          <div><dt>Integrity</dt><dd id="integrity">—</dd></div>
+        </dl>
+        <div class="qc-note"><strong>QC boundary</strong><p>This viewer presents the traceable formal GLB under neutral lighting. It does not alter the asset or record a QC verdict.</p></div>
+      </aside>
+    </main>
+  </body>
+</html>
+
