@@ -20,8 +20,27 @@ jobs:
     timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
+      - name: Download immutable QC asset bundle
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in {1..30}; do
+            if gh release download asset-bundle-v1 --pattern soudache-qc-viewer-pages.zip --dir .asset-cache; then
+              break
+            fi
+            if [ "$attempt" -eq 30 ]; then
+              exit 1
+            fi
+            sleep 20
+          done
+          echo "29e537050ee872e4c8c60f4ba2ab25bfbd55d46a046199f877b2c5fba30483ce  .asset-cache/soudache-qc-viewer-pages.zip" | sha256sum --check
+          unzip -q .asset-cache/soudache-qc-viewer-pages.zip -d .asset-cache
+          mkdir -p .asset-cache/site
+          tar -xf .asset-cache/artifact.tar -C .asset-cache/site
       - name: Build integrity-verified public site
-        run: python3 scripts/build_public_viewer.py --output .site
+        run: python3 scripts/build_public_viewer.py --asset-dir .asset-cache/site/assets --output .site
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -73,4 +92,3 @@ jobs:
         env:
           VIEWER_URL: ${{ needs.deploy.outputs.page_url }}
         run: node scripts/validate_qc_viewer.mjs --base-url="$VIEWER_URL" --mode=remote
-

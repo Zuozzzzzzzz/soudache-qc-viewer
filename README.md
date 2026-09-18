@@ -14,7 +14,6 @@ The private `Zuozzzzzzzz/soudache-content` repository remains the sole productio
 
 ## Delivery integrity
 
-GitHub Actions downloads only the already-existing public delivery objects named in `asset-sources.json`, checks the exact byte count and SHA-256 recorded by the private production source, validates each GLB 2 header and structure, and then places the verified files in the ephemeral Pages artifact. A mismatch blocks deployment.
+GitHub Actions downloads the immutable `asset-bundle-v1` QC release, verifies the bundle SHA-256, then checks every GLB against the exact byte count and SHA-256 recorded in `asset-sources.json`. It validates each GLB 2 header and structure before placing the files in the ephemeral Pages artifact. A mismatch blocks deployment.
 
 No Meshy generation or paid API operation is performed. Credits used: **0**.
-

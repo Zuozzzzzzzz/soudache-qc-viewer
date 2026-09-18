@@ -8,8 +8,6 @@ import hashlib
 import json
 import shutil
 import struct
-import time
-import urllib.request
 from pathlib import Path
 
 
@@ -54,25 +52,6 @@ def inspect_glb(path: Path) -> dict[str, int]:
     return result
 
 
-def download(url: str, destination: Path, attempts: int = 4) -> None:
-    partial = destination.with_suffix(".part")
-    for attempt in range(1, attempts + 1):
-        try:
-            request = urllib.request.Request(
-                url,
-                headers={"User-Agent": "Soudache-QC-Viewer-Deployment/1.0"},
-            )
-            with urllib.request.urlopen(request, timeout=180) as response, partial.open("wb") as output:
-                shutil.copyfileobj(response, output, length=4 * 1024 * 1024)
-            partial.replace(destination)
-            return
-        except Exception:
-            partial.unlink(missing_ok=True)
-            if attempt == attempts:
-                raise
-            time.sleep(attempt * 5)
-
-
 def safe_output(path: Path) -> Path:
     resolved = path.resolve()
     if resolved == ROOT or ROOT not in resolved.parents:
@@ -83,8 +62,12 @@ def safe_output(path: Path) -> Path:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", required=True, type=Path)
+    parser.add_argument("--asset-dir", required=True, type=Path)
     args = parser.parse_args()
     output = safe_output(args.output)
+    asset_dir = args.asset_dir.resolve()
+    if not asset_dir.is_dir():
+        raise RuntimeError(f"Verified asset input directory is missing: {asset_dir}")
     if output.exists():
         shutil.rmtree(output)
     (output / "assets").mkdir(parents=True)
@@ -103,9 +86,12 @@ def main() -> None:
     runtime_assets = []
     total_bytes = 0
     for asset in assets:
+        source = asset_dir / f"{asset['assetId']}.glb"
+        if not source.is_file():
+            raise FileNotFoundError(source)
         destination = output / "assets" / f"{asset['assetId']}.glb"
-        print(f"Downloading existing {asset['route']} object for {asset['assetId']}", flush=True)
-        download(asset["deliveryUrl"], destination)
+        print(f"Staging existing {asset['route']} object for {asset['assetId']}", flush=True)
+        shutil.copy2(source, destination)
         actual_bytes = destination.stat().st_size
         if actual_bytes != asset["expectedBytes"]:
             raise RuntimeError(f"Unexpected size for {asset['assetId']}: {actual_bytes}")
@@ -115,9 +101,8 @@ def main() -> None:
         structure = inspect_glb(destination)
         if asset["route"] == "RETEXTURE" and structure["materialCount"] < 1:
             raise RuntimeError(f"Retextured GLB has no materials: {asset['assetId']}")
-        public_asset = {key: value for key, value in asset.items() if key != "deliveryUrl"}
         runtime_assets.append({
-            **public_asset,
+            **asset,
             **structure,
             "sourceRepository": payload["sourceRepository"],
             "sourceCommit": payload["sourceCommit"],
@@ -175,4 +160,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

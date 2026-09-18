@@ -1,3 +1,4 @@
 .site/
+.asset-cache/
 node_modules/
 *.part

@@ -17,7 +17,6 @@
       "author": "damgybang",
       "license": "CC0 1.0",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "deliveryUrl": "https://assets.meshy.ai/9d833ea3-cb90-4865-89bd-7456b1f2a30e/tasks/01a04fa0-c277-7561-9c0c-5c0f7bacedf8/output/model.glb",
       "expectedBytes": 2872532,
       "expectedSha256": "cf59018c9f989b33b99f9ac5d8bac4df6a2d964c9295912359ef08a5a57d18d4"
     },
@@ -34,7 +33,6 @@
       "author": "rkdals6806",
       "license": "CC0 1.0",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "deliveryUrl": "https://assets.meshy.ai/696cd870-202b-4cff-9047-2dc75e6c5a2d/tasks/019bd088-635f-7182-af54-26d7b23db7e8/output/model.glb",
       "expectedBytes": 377667756,
       "expectedSha256": "566bda9d622d77f253b4aa753f4e8aaee1478ccf17bd2e4455c7998b83072fe8"
     },
@@ -51,7 +49,6 @@
       "author": "dividebytube",
       "license": "CC0 1.0",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "deliveryUrl": "https://assets.meshy.ai/c5fc433a-033b-4b3e-b681-cbb7fe20633a/tasks/019fd384-e90c-7c7f-b8e5-0f3699d0213d/output/model.glb",
       "expectedBytes": 60166188,
       "expectedSha256": "e383dc41831926751cb15161a18fe1a1a8d80e920e2b193e6f83ee82ae35d8fc"
     },
@@ -68,7 +65,6 @@
       "author": "kzoper",
       "license": "CC0 1.0",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "deliveryUrl": "https://assets.meshy.ai/25895120-ef96-408a-bbda-c581469675f3/tasks/0197e8fd-af92-72b9-ab50-642358d08247/output/model.glb",
       "expectedBytes": 5463192,
       "expectedSha256": "caa1faf66c7e927f25fcd8e4b066c840c22c56bb8422631657a6e9fdf0505218"
     },
@@ -85,7 +81,6 @@
       "author": "dividebytube",
       "license": "CC0 1.0",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "deliveryUrl": "https://assets.meshy.ai/c5fc433a-033b-4b3e-b681-cbb7fe20633a/tasks/019c8c64-b00e-7f59-bea0-a278166f0b74/output/model.glb",
       "expectedBytes": 14047772,
       "expectedSha256": "1686041a342adb7ce253ad2429c7259b0ddef2ab7670b1654067a1512cf53a9d"
     },
@@ -102,7 +97,6 @@
       "author": "psersonal68",
       "license": "CC0 1.0",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "deliveryUrl": "https://assets.meshy.ai/3da760a4-8add-4e71-8b37-e112f648c0c5/tasks/0197cebd-4e44-7715-b2f4-dfc6a970f5d0/output/model.glb",
       "expectedBytes": 12010344,
       "expectedSha256": "671a31824a28f975854e491652ffbc7ea41c3604223c657dd02f5330592988b9"
     },
@@ -120,7 +114,6 @@
       "author": "anti.trap",
       "license": "CC0 1.0",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "deliveryUrl": "https://assets.meshy.ai/aa60bba4-2908-44a4-a1e7-0d1ded293ed9/tasks/01a0b2dd-0aed-733a-a509-f988a8777f4c/output/model.glb",
       "expectedBytes": 37412764,
       "expectedSha256": "6088797e019b50a810bad8422a721948987849a4e2775f3ced4a78b94c909109"
     },
@@ -138,7 +131,6 @@
       "author": "bshu89",
       "license": "CC0 1.0",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "deliveryUrl": "https://assets.meshy.ai/aa60bba4-2908-44a4-a1e7-0d1ded293ed9/tasks/01a0b2de-ba3b-71a2-9fb3-adb7de3d7798/output/model.glb",
       "expectedBytes": 47102920,
       "expectedSha256": "c845a8527502bd4314f9066d44756e12c70dd38f121aefcbc4e3166e8709cb33"
     },
@@ -156,7 +148,6 @@
       "author": "akom531",
       "license": "CC0 1.0",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "deliveryUrl": "https://assets.meshy.ai/aa60bba4-2908-44a4-a1e7-0d1ded293ed9/tasks/01a0b2e0-e368-7602-a8ad-fe1d12c3bb2a/output/model.glb",
       "expectedBytes": 12836436,
       "expectedSha256": "836dfb2ba7544cb2a1898fb241a1037da54f1c2d107f358bfd9fe260805a3daf"
     },
@@ -174,7 +165,6 @@
       "author": "johaniashivclaw",
       "license": "CC0 1.0",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "deliveryUrl": "https://assets.meshy.ai/aa60bba4-2908-44a4-a1e7-0d1ded293ed9/tasks/01a0b2e2-843d-7430-af9a-d85d9a5e78e5/output/model.glb",
       "expectedBytes": 22843712,
       "expectedSha256": "a5f96e87875e6e370739b93484c85c5b4fba96b70efe2656d19c64ec82adaf9a"
     },
@@ -192,7 +182,6 @@
       "author": "dunna1406",
       "license": "CC0 1.0",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "deliveryUrl": "https://assets.meshy.ai/aa60bba4-2908-44a4-a1e7-0d1ded293ed9/tasks/01a0b2e4-265a-755a-986a-cab741ecb5ff/output/model.glb",
       "expectedBytes": 21476596,
       "expectedSha256": "b3a567b3dc85c08db396a41c07a46a6c3ad5adcb738a9626d4bfea6b33bf95df"
     },
@@ -210,7 +199,6 @@
       "author": "seyhan1637",
       "license": "CC0",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "deliveryUrl": "https://assets.meshy.ai/aa60bba4-2908-44a4-a1e7-0d1ded293ed9/tasks/01a0b2e5-cc5a-732e-aed9-772b0999c21a/output/model.glb",
       "expectedBytes": 12311764,
       "expectedSha256": "b383c22a9fee03a1e1ec64b8cc510a96d892f54a53d342ff59065b8f28a532ee"
     },
@@ -228,7 +216,6 @@
       "author": "mintuthomas12",
       "license": "CC0 1.0",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "deliveryUrl": "https://assets.meshy.ai/aa60bba4-2908-44a4-a1e7-0d1ded293ed9/tasks/01a0b2e7-68e1-77ee-85e0-f9dbe991fbb9/output/model.glb",
       "expectedBytes": 27413636,
       "expectedSha256": "ac1883545eb0127ba041fe48286f50896a9388bdb6b47c2ad7b2f23494f9d330"
     }
