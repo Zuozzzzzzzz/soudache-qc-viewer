@@ -55,6 +55,7 @@ jobs:
           trap 'kill "$server_pid" || true' EXIT
           node scripts/validate_qc_viewer.mjs --base-url=http://127.0.0.1:4173/ --mode=local
       - name: Configure GitHub Pages
+        continue-on-error: true
         uses: actions/configure-pages@v5
         with:
           enablement: true
